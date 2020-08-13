@@ -7,11 +7,25 @@ spring:
     config:
       server:
         git:
-          uri:  https://github.com/kuikui1998/springcloud-config.git
+          uri:  https://github.com/kuikui1998/springcloud-config.git  #git@github.com:hhf19906/springcloud-config.git
           search-paths:
             - springcloud-config
       label: master
+  rabbitmq:
+    host: 192.168.22.135
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   client:
     service-url:
       defaultZone:  http://localhost:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+
+
